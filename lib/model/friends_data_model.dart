@@ -1,3 +1,8 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part 'friends_data_model.g.dart';
+
+@JsonSerializable()
 class Friends {
   String? gender;
   Name? name;
@@ -26,11 +31,13 @@ class Friends {
       this.picture,
       this.nat});
 
-  Friends.fromJson(Map<String, dynamic> json) {}
+  factory Friends.fromJson(Map<String, dynamic> json) =>
+      _$FriendsFromJson(json);
 
-  Map<String, dynamic> toJson() {}
+  Map<String, dynamic> toJson() => _$FriendsToJson(this);
 }
 
+@JsonSerializable()
 class Name {
   String? title;
   String? first;
@@ -38,11 +45,12 @@ class Name {
 
   Name({this.title, this.first, this.last});
 
-  Name.fromJson(Map<String, dynamic> json) {}
+  factory Name.fromJson(Map<String, dynamic> json) => _$NameFromJson(json);
 
-  Map<String, dynamic> toJson() {}
+  Map<String, dynamic> toJson() => _$NameToJson(this);
 }
 
+@JsonSerializable()
 class Location {
   Street? street;
   String? city;
@@ -61,44 +69,51 @@ class Location {
       this.coordinates,
       this.timezone});
 
-  Location.fromJson(Map<String, dynamic> json) {}
+  factory Location.fromJson(Map<String, dynamic> json) =>
+      _$LocationFromJson(json);
 
-  Map<String, dynamic> toJson() {}
+  Map<String, dynamic> toJson() => _$LocationToJson(this);
 }
 
+@JsonSerializable()
 class Street {
   int? number;
   String? name;
 
   Street({this.number, this.name});
 
-  Street.fromJson(Map<String, dynamic> json) {}
+  factory Street.fromJson(Map<String, dynamic> json) => _$StreetFromJson(json);
 
-  Map<String, dynamic> toJson() {}
+  Map<String, dynamic> toJson() => _$StreetToJson(this);
 }
 
+@JsonSerializable()
 class Coordinates {
   String? latitude;
   String? longitude;
 
   Coordinates({this.latitude, this.longitude});
 
-  Coordinates.fromJson(Map<String, dynamic> json) {}
+  factory Coordinates.fromJson(Map<String, dynamic> json) =>
+      _$CoordinatesFromJson(json);
 
-  Map<String, dynamic> toJson() {}
+  Map<String, dynamic> toJson() => _$CoordinatesToJson(this);
 }
 
+@JsonSerializable()
 class Timezone {
   String? offset;
   String? description;
 
   Timezone({this.offset, this.description});
 
-  Timezone.fromJson(Map<String, dynamic> json) {}
+  factory Timezone.fromJson(Map<String, dynamic> json) =>
+      _$TimezoneFromJson(json);
 
-  Map<String, dynamic> toJson() {}
+  Map<String, dynamic> toJson() => _$TimezoneToJson(this);
 }
 
+@JsonSerializable()
 class Login {
   String? uuid;
   String? username;
@@ -117,33 +132,36 @@ class Login {
       this.sha1,
       this.sha256});
 
-  Login.fromJson(Map<String, dynamic> json) {}
+  factory Login.fromJson(Map<String, dynamic> json) => _$LoginFromJson(json);
 
-  Map<String, dynamic> toJson() {}
+  Map<String, dynamic> toJson() => _$LoginToJson(this);
 }
 
+@JsonSerializable()
 class Dob {
   String? date;
   int? age;
 
   Dob({this.date, this.age});
 
-  Dob.fromJson(Map<String, dynamic> json) {}
+  factory Dob.fromJson(Map<String, dynamic> json) => _$DobFromJson(json);
 
-  Map<String, dynamic> toJson() {}
+  Map<String, dynamic> toJson() => _$DobToJson(this);
 }
 
+@JsonSerializable()
 class Id {
   String? name;
   String? value;
 
   Id({this.name, this.value});
 
-  Id.fromJson(Map<String, dynamic> json) {}
+  factory Id.fromJson(Map<String, dynamic> json) => _$IdFromJson(json);
 
-  Map<String, dynamic> toJson() {}
+  Map<String, dynamic> toJson() => _$IdToJson(this);
 }
 
+@JsonSerializable()
 class Picture {
   String? large;
   String? medium;
@@ -151,7 +169,8 @@ class Picture {
 
   Picture({this.large, this.medium, this.thumbnail});
 
-  Picture.fromJson(Map<String, dynamic> json) {}
+  factory Picture.fromJson(Map<String, dynamic> json) =>
+      _$PictureFromJson(json);
 
-  Map<String, dynamic> toJson() {}
+  Map<String, dynamic> toJson() => _$PictureToJson(this);
 }
