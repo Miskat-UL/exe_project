@@ -69,7 +69,7 @@ Location _$LocationFromJson(Map<String, dynamic> json) => Location(
       city: json['city'] as String?,
       state: json['state'] as String?,
       country: json['country'] as String?,
-      postcode: json['postcode'] as int?,
+      postcode: json['postcode'] as dynamic,
       coordinates: json['coordinates'] == null
           ? null
           : Coordinates.fromJson(json['coordinates'] as Map<String, dynamic>),
