@@ -1,3 +1,4 @@
+import 'package:ex_project/view/main_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,10 +12,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Friends',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
         useMaterial3: true,
       ),
+      home: const MainScreen(),
     );
   }
 }
+
+
